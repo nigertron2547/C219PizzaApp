@@ -2,9 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 function App() {
+const capitalHeader = "Obama's Pizza".toUpperCase();
     return (
         <div>
-            <h1>Mario's Pizza</h1>
+            <h1 style={{color:'orange', fontSize: '48px'}}>{capitalHeader}</h1>
             <PizzaList />
         </div>
     )
