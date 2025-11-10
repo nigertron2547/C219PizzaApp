@@ -2,8 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-function Header() {
 
+function App() {
+    return (
+        <div>
+            <Header />
+            <Menu />
+            <Footer />
+        </div>
+    )
+}
+
+function Header() {
     return (
         <div>
         <h1 style={{
@@ -21,42 +31,6 @@ function Header() {
             Operating Hours: 10:00 am - 10:00pm</h2>
             <br></br>
         </div>
-    )
-}
-function App() {
-    return (
-        <div>
-            <Header />
-            <Menu />
-            <Footer />
-        </div>
-    )
-}
-
-function Footer() {
-    const currentHour = new Date().getHours();
-    const isOpen = currentHour >= 10 && currentHour <= 22;
-    return (
-        <footer style={{
-        fontSize: '1.4rem',
-        textAlign: 'center',
-        fontWeight: 'bold',
-        marginTop: '4rem',}}>
-            {isOpen ? "We're currently open" : " Sorry, we're closed"}
-            <br></br>
-            <br></br>
-            {isOpen && <button style={{
-                color: 'white',
-                fontFamily: 'inherit',
-                border: 'none',
-                fontSize: '1.4rem',
-                fontWeight: 500,
-                backgroundColor: '#570e7e',
-                padding: '1.4rem 3.2rem',
-                cursor: 'pointer',
-                TransitionEvent: 'all 0.2s',
-            }}>Order</button>}
-        </footer>
     )
 }
 
@@ -137,7 +111,7 @@ function PizzaList() {
         }}>
             {pizzas.map((pizza) => (
                 <div key={pizza.name}>
-                    <img src={pizza.photoName} width="170" />
+                    <img src={pizza.photoName} width="150"/>
                     <h2 style={{textAlign:'center'}}>{pizza.name}</h2>
                     <p style={{textAlign: 'center'}}>{pizza.ingredients}</p>
                     <p style={{textAlign:'center'}}>${pizza.price}</p>
@@ -155,6 +129,33 @@ function PizzaList() {
                 </div>
             ))}
         </div>
+    )
+}
+
+function Footer() {
+    const currentHour = new Date().getHours();
+    const isOpen = currentHour >= 10 && currentHour <= 22;
+    return (
+        <footer style={{
+        fontSize: '1.4rem',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginTop: '4rem',}}>
+            {isOpen ? "We're currently open" : " Sorry, we're closed"}
+            <br></br>
+            <br></br>
+            {isOpen && <button style={{
+                color: 'white',
+                fontFamily: 'inherit',
+                border: 'none',
+                fontSize: '1.4rem',
+                fontWeight: 500,
+                backgroundColor: '#570e7e',
+                padding: '1.4rem 3.2rem',
+                cursor: 'pointer',
+                TransitionEvent: 'all 0.2s',
+            }}>Order Now</button>}
+        </footer>
     )
 }
 
