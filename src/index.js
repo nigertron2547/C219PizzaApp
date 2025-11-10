@@ -111,7 +111,7 @@ function PizzaList() {
         }}>
             {pizzas.map((pizza) => (
                 <div key={pizza.name}>
-                    <img src={pizza.photoName} width="150"/>
+                    <img src={pizza.photoName} width="150" alt=""/>
                     <h2 style={{textAlign:'center'}}>{pizza.name}</h2>
                     <p style={{textAlign: 'center'}}>{pizza.ingredients}</p>
                     <p style={{textAlign:'center'}}>${pizza.price}</p>
